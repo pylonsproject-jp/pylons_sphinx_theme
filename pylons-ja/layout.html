@@ -3,6 +3,9 @@
 {%- block extrahead %}
 {{ super() }}
 <script type="text/javascript" src="{{ pathto('_static/jp.js', 1) }}"></script>
+{% if theme_canonical_uri %}
+<link rel="canonical" href="{{ theme_canonical_uri.rstrip('/') }}/{{ pathto(pagename, 0, '') }}" />
+{% endif %}
 {% endblock %}
 
 {% block header %}
